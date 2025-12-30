@@ -119,7 +119,7 @@ class UsersController < ApplicationController
   def logout
     sign_out current_user
 
-    redirect_back(fallback_location: root_path)
+    redirect_back_or_to(root_path)
   end
 
   private

@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 8.0.4'
+gem 'rails', '~> 8.1.1'
 gem 'rake', '~> 12.0'
 gem 'sprockets-rails'
 # Use postgres
@@ -90,8 +90,8 @@ group :test do
   gem 'haml_lint', require: false
   gem 'rails_best_practices', require: false
   gem 'reek', '~> 6', require: false
-  gem 'rubocop', '~> 1.64.1', require: false
-  gem 'rubocop-rails', '~> 2.25.0', require: false
+  gem 'rubocop', '~> 1.82', require: false
+  gem 'rubocop-rails', '~> 2.34', require: false
 
   gem 'codecov', require: false
 end
