@@ -606,6 +606,7 @@ DEPENDENCIES
   omniauth-discord
   omniauth-rails_csrf_protection
   omniauth-steam
+  ostruct
   pagedown-bootstrap-rails
   parallel_tests
   pg (~> 1.0)
