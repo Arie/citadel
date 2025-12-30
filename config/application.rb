@@ -17,6 +17,9 @@ module Ozfortress
     # Use new serialization format
     config.active_support.cache_format_version = 7.0
 
+    # Preserve full timezone (not just offset) when calling `to_time`
+    config.active_support.to_time_preserves_timezone = :zone
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading

@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 7.2.3'
+gem 'rails', '~> 8.0.4'
 gem 'rake', '~> 12.0'
 gem 'sprockets-rails'
 # Use postgres
@@ -8,7 +8,7 @@ gem 'pg', '~> 1.0'
 # Fast loading
 # gem 'bootsnap', '~> 1.3'
 # Active Record extensions
-gem 'active_record_union', '~> 1.3'
+gem 'active_record_union', '~> 1.4'
 gem 'ancestry'
 # SASS for stylesheets
 gem 'sass-rails', '~> 6'
