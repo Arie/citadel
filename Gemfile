@@ -30,7 +30,7 @@ gem 'cocoon'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Steam Login
-gem 'omniauth', '~> 1'
+gem 'omniauth', '~> 2'
 gem 'omniauth-discord'
 gem 'omniauth-rails_csrf_protection'
 gem 'omniauth-steam'
@@ -54,6 +54,8 @@ gem 'counter_culture', '~> 2.0'
 gem 'tournament-system', '~> 2.0'
 # Backwards compatibility with ruby 2
 gem 'scanf'
+# Ruby 4.0 compatibility - restores CGI.parse for ruby-openid
+gem 'cgi'
 
 group :production do
   gem 'puma', '~> 6.0'
