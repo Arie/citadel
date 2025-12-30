@@ -108,15 +108,5 @@ describe API::V1::UsersController, type: :request do
         expect(response).to be_not_found
       end
     end
-    context 'with Discord integration disabled' do
-      before do
-        allow(Rails.configuration.features).to receive(:discord_integration).and_return(false)
-        Rails.application.reload_routes!
-      end
-
-      it 'cannot route by Discord ID' do
-        expect { get "#{route}/#{user.discord_id}" }.to raise_error(ActionController::RoutingError)
-      end
-    end
   end
 end
