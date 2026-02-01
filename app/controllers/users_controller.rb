@@ -92,6 +92,8 @@ class UsersController < ApplicationController
   end
 
   def unlink_discord
+    return head :not_found unless Rails.configuration.features.discord_integration
+
     @user.update!(discord_id: nil)
     flash[:notice] = 'Discord account unlinked!'
     redirect_to edit_user_path(@user)

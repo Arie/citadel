@@ -83,7 +83,6 @@ describe API::V1::UsersController, type: :request do
     context 'with Discord integration enabled' do
       before do
         allow(Rails.configuration.features).to receive(:discord_integration).and_return(true)
-        Rails.application.reload_routes!
       end
 
       it 'succeeds for existing user' do
@@ -105,6 +104,18 @@ describe API::V1::UsersController, type: :request do
         json = response.parsed_body
         expect(json['status']).to eq(404)
         expect(json['message']).to eq('Record not found')
+        expect(response).to be_not_found
+      end
+    end
+
+    context 'with Discord integration disabled' do
+      before do
+        allow(Rails.configuration.features).to receive(:discord_integration).and_return(false)
+      end
+
+      it 'returns 404' do
+        get "#{route}/#{user.discord_id}", headers: { 'X-API-Key' => api_key.key }
+
         expect(response).to be_not_found
       end
     end
